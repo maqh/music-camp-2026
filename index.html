@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#f5f5f3;line-height:1.6;min-height:100vh;padding:1.5rem 1rem 3rem}
-.container{max-width:1024px;margin:0 auto}
+.container{max-width:860px;margin:0 auto}
 .hero{background:linear-gradient(135deg,#1a3a5c 0%,#0f6e56 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:16px;margin-bottom:2rem;position:relative;overflow:hidden}
 .hero::before{content:'♪';position:absolute;right:2rem;top:1rem;font-size:6rem;opacity:0.08;line-height:1;pointer-events:none}
 .hero-eyebrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.5rem}
@@ -88,8 +88,9 @@ a:hover{text-decoration:underline}
 .schedule-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e8e5e0;border-top:none;border-radius:0 0 10px 10px;overflow:hidden}
 .schedule-table tr{border-bottom:1px solid #f0ede8}
 .schedule-table tr:last-child{border-bottom:none}
-.schedule-table td{padding:9px 14px;font-size:13px;vertical-align:top}
+.schedule-table td{padding:9px 14px;font-size:13px;vertical-align:top;color:#4b5563}
 .schedule-table td:first-child{color:#185fa5;font-weight:700;font-family:'Courier New',monospace;white-space:nowrap;width:68px}
+.schedule-table .schedule-location{color:#9ca3af}
 .schedule-table tr.highlight{background:#fffbeb}
 .schedule-table tr.highlight td:first-child{color:#b45309}
 .schedule-table tr.concert{background:#1a3a5c}
@@ -454,21 +455,21 @@ a:hover{text-decoration:underline}
   <div class="schedule-day" style="margin-top:1.25rem">
     <div class="schedule-day-header">☀️ Sunday 19 July 2026</div>
     <table class="schedule-table">
-      <tr><td>8:00am</td><td>Arrival — sign in at Dining Room 1</td></tr>
+      <tr><td>8:00am</td><td>Arrival — sign in at <span class="schedule-location">Dining Room 1</span></td></tr>
       <tr><td>9:00am</td><td>Student briefing</td></tr>
       <tr><td>9:10am</td><td>Student ice breaker</td></tr>
-      <tr><td>9:30am</td><td>Full band rehearsal — Dining Room 2<br><span style="color:#999;font-size:12px">String Orchestra — Cardinal Meeting Hall</span></td></tr>
-      <tr><td>10:40am</td><td>Morning tea — Dining Room 1</td></tr>
-      <tr><td>11:00am</td><td>Full band rehearsal — Dining Room 2<br><span style="color:#999;font-size:12px">String Orchestra — Cardinal Meeting Hall</span></td></tr>
-      <tr><td>12:40pm</td><td>Lunch — Dining Room 1</td></tr>
-      <tr><td>1:30pm</td><td>Group photos — outside Dining Room 1</td></tr>
-      <tr><td>1:45pm</td><td>Full band rehearsal — Dining Room 2<br><span style="color:#999;font-size:12px">String Orchestra — Cardinal Meeting Hall</span></td></tr>
-      <tr><td>3:00pm</td><td>Afternoon tea — Dining Room 1</td></tr>
-      <tr><td>3:30pm</td><td>Full band rehearsal — Dining Room 2<br><span style="color:#999;font-size:12px">String Orchestra — Cardinal Meeting Hall</span></td></tr>
-      <tr><td>4:45pm</td><td>Free time <span style="color:#999;font-size:12px">(report to Dining Room 1 first)</span></td></tr>
-      <tr><td>6:00pm</td><td>Dinner — Dining Room 1</td></tr>
-      <tr><td>7:00pm</td><td>Games night — Dining Room 1</td></tr>
-      <tr class="daycamp-row"><td>8:30pm</td><td>🌙 <strong>Suggested pick-up for day campers</strong> — Dining Room 1 sign-out</td></tr>
+      <tr><td>9:30am</td><td>🎷 Full band rehearsal — <span class="schedule-location">Dining Room 2</span><br>🎻 String Orchestra — <span class="schedule-location">Cardinal Meeting Hall</span></td></tr>
+      <tr><td>10:40am</td><td>Morning tea — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>11:00am</td><td>🎷 Full band rehearsal — <span class="schedule-location">Dining Room 2</span><br>🎻 String Orchestra — <span class="schedule-location">Cardinal Meeting Hall</span></td></tr>
+      <tr><td>12:40pm</td><td>Lunch — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>1:30pm</td><td>Group photos — outside <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>1:45pm</td><td>🎷 Full band rehearsal — <span class="schedule-location">Dining Room 2</span><br>🎻 String Orchestra — <span class="schedule-location">Cardinal Meeting Hall</span></td></tr>
+      <tr><td>3:00pm</td><td>Afternoon tea — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>3:30pm</td><td>🎷 Full band rehearsal — <span class="schedule-location">Dining Room 2</span><br>🎻 String Orchestra — <span class="schedule-location">Cardinal Meeting Hall</span></td></tr>
+      <tr><td>4:45pm</td><td>Free time <span style="color:#999;font-size:12px">(report to <span class="schedule-location">Dining Room 1</span> first)</span></td></tr>
+      <tr><td>6:00pm</td><td>Dinner — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>7:00pm</td><td>Games night — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr class="daycamp-row"><td>8:30pm</td><td>🌙 <strong>Suggested pick-up for day campers</strong> — <span class="schedule-location">Dining Room 1 sign-out</span></td></tr>
       <tr class="highlight"><td>8:30pm</td><td>🎬 Movie <span class="tentative-badge">Tentative</span></td></tr>
       <tr><td>10:00pm</td><td>Bed and lights out</td></tr>
     </table>
@@ -478,19 +479,19 @@ a:hover{text-decoration:underline}
     <div class="schedule-day-header">☀️ Monday 20 July 2026</div>
     <table class="schedule-table">
       <tr><td>7:00am</td><td>Rise and shine</td></tr>
-      <tr><td>7:30am</td><td>Breakfast — Dining Room 1</td></tr>
-      <tr class="daycamp-row"><td>8:30am</td><td>🌅 <strong>Day camper check-in</strong> — after breakfast, Dining Room 1</td></tr>
+      <tr><td>7:30am</td><td>Breakfast — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr class="daycamp-row"><td>8:30am</td><td>🌅 <strong>Day camper check-in</strong> — after breakfast, <span class="schedule-location">Dining Room 1</span></td></tr>
       <tr><td>8:30am</td><td>Pack up rooms and put bags outside the dorm</td></tr>
-      <tr><td>9:00am</td><td>Band sectionals — various locations<br><span style="color:#999;font-size:12px">String sectionals — various locations</span></td></tr>
+      <tr><td>9:00am</td><td>🎷 Band sectionals — <span class="schedule-location">various locations</span><br>🎻 String sectionals — <span class="schedule-location">various locations</span></td></tr>
       <tr><td>10:30am</td><td>Thank you to sectional teachers</td></tr>
-      <tr><td>10:40am</td><td>Morning tea — Dining Room 1</td></tr>
-      <tr><td>11:00am</td><td>Team building activity — meet on oval</td></tr>
-      <tr><td>12:30pm</td><td>Lunch — Dining Room 1</td></tr>
-      <tr><td>1:30pm</td><td>Team building activity — meet on oval</td></tr>
-      <tr><td>3:00pm</td><td>Afternoon tea — Dining Room 1</td></tr>
-      <tr><td>3:15pm</td><td>Full band rehearsal — Dining Room 2<br><span style="color:#999;font-size:12px">String Orchestra — Cardinal Meeting Hall</span></td></tr>
-      <tr class="concert"><td>3:45pm</td><td>🎼 <strong>Finale concert — all students performing</strong><br><span style="color:rgba(255,255,255,0.65);font-size:12px">Dining Room · Parents please arrive by 3:30pm</span></td></tr>
-      <tr><td>4:30pm</td><td>Clean up &amp; sign-out — Dining Room 1</td></tr>
+      <tr><td>10:40am</td><td>Morning tea — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>11:00am</td><td>Team building activity — meet on <span class="schedule-location">oval</span></td></tr>
+      <tr><td>12:30pm</td><td>Lunch — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>1:30pm</td><td>Team building activity — meet on <span class="schedule-location">oval</span></td></tr>
+      <tr><td>3:00pm</td><td>Afternoon tea — <span class="schedule-location">Dining Room 1</span></td></tr>
+      <tr><td>3:15pm</td><td>🎷 Full band rehearsal — <span class="schedule-location">Dining Room 2</span><br>🎻 String Orchestra — <span class="schedule-location">Cardinal Meeting Hall</span></td></tr>
+      <tr class="concert"><td>3:45pm</td><td>🎼 <strong>Finale concert — all students performing</strong><br><span style="color:rgba(255,255,255,0.65);font-size:12px"><span class="schedule-location">Dining Room</span> · Parents please arrive by 3:30pm</span></td></tr>
+      <tr><td>4:30pm</td><td>Clean up &amp; sign-out — <span class="schedule-location">Dining Room 1</span></td></tr>
     </table>
   </div>
 
