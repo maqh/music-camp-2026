@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Camp 2026 — Parent Information Pack</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#f5f5f3;line-height:1.6;min-height:100vh;padding:1.5rem 1rem 3rem}
+.container{max-width:720px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#1a3a5c 0%,#0f6e56 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:16px;margin-bottom:2rem;position:relative;overflow:hidden}
+.hero::before{content:'♪';position:absolute;right:2rem;top:1rem;font-size:6rem;opacity:0.08;line-height:1;pointer-events:none}
+.hero-eyebrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.5rem}
+.hero h1{font-size:26px;font-weight:600;margin-bottom:0.25rem;line-height:1.2}
+.hero-sub{font-size:14px;opacity:0.8;margin-bottom:1.25rem}
+.hero-meta{display:flex;gap:0.75rem;flex-wrap:wrap}
+.hero-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:100px;padding:5px 14px;font-size:13px;display:flex;align-items:center;gap:6px}
+.tabs{display:flex;gap:0;border-bottom:1px solid #e0ddd8;margin-bottom:1.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:12px 12px 0 0;padding:0 0.5rem}
+.tab{padding:12px 14px;font-size:14px;color:#666;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:color 0.15s;margin-bottom:-1px;text-decoration:none}
+.tab.active{color:#185fa5;border-bottom-color:#185fa5;font-weight:500}
+.tab:hover:not(.active){color:#1a1a1a}
+.panel{display:none;animation:fadeIn 0.15s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.section-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:0.85rem;margin-top:1.75rem}
+.section-label:first-child{margin-top:0}
+.card{background:#fff;border:1px solid #e8e5e0;border-radius:12px;padding:1.25rem}
+.card+.card{margin-top:0.75rem}
+.card-title{font-size:15px;font-weight:600;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px;color:#1a1a1a}
+.card-icon{font-size:18px}
+.card p{font-size:14px;color:#555;line-height:1.6}
+.card p+p{margin-top:0.5rem}
+.alert{border-radius:10px;padding:1rem 1.25rem;margin-bottom:0.75rem;display:flex;gap:10px;align-items:flex-start}
+.alert-icon{font-size:18px;flex-shrink:0;margin-top:1px;font-style:normal}
+.alert-danger{background:#fef2f2;border:1px solid #fecaca}
+.alert-danger .alert-icon,.alert-danger .alert-title{color:#dc2626}
+.alert-warning{background:#fffbeb;border:1px solid #fcd34d}
+.alert-warning .alert-icon,.alert-warning .alert-title{color:#b45309}
+.alert-success{background:#f0fdf4;border:1px solid #86efac}
+.alert-success .alert-icon,.alert-success .alert-title{color:#15803d}
+.alert-info{background:#eff6ff;border:1px solid #bfdbfe}
+.alert-info .alert-icon,.alert-info .alert-title{color:#1d4ed8}
+.alert-title{font-size:14px;font-weight:600;margin-bottom:3px}
+.alert p{font-size:13px;color:#555;line-height:1.5}
+.rule-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.rule-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#444;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #e8e5e0}
+.rule-icon{font-size:16px;flex-shrink:0;margin-top:1px;font-style:normal}
+.step{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #f0ede8}
+.step:last-child{border-bottom:none}
+.step-num{width:28px;height:28px;border-radius:50%;background:#eff6ff;color:#1d4ed8;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #bfdbfe}
+.step-body{flex:1}
+.step-title{font-size:14px;font-weight:600;margin-bottom:4px;color:#1a1a1a}
+.step-desc{font-size:13px;color:#555;line-height:1.5}
+.code-pill{display:inline-block;background:#f5f5f3;border:1px solid #d0ccc5;border-radius:6px;padding:2px 8px;font-family:'Courier New',monospace;font-size:14px;font-weight:700;letter-spacing:0.1em;color:#1d4ed8}
+.map-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#1d4ed8;text-decoration:none;margin-top:8px}
+.map-link:hover{text-decoration:underline}
+.activity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.75rem}
+.activity-card{background:#fff;border:1px solid #e8e5e0;border-radius:12px;padding:1rem 1.25rem}
+.activity-card .tag{display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:#1d4ed8;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;margin-bottom:0.6rem;letter-spacing:0.03em}
+.activity-card h4{font-size:15px;font-weight:600;margin-bottom:0.4rem;color:#1a1a1a}
+.activity-card p{font-size:13px;color:#555;line-height:1.5}
+.activity-note{font-size:12px;color:#999;margin-top:8px;padding-top:8px;border-top:1px solid #f0ede8}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:0}
+.checklist li{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid #f0ede8;font-size:14px;cursor:pointer;transition:background 0.1s;color:#1a1a1a;user-select:none}
+.checklist li:first-child{border-radius:12px 12px 0 0}
+.checklist li:last-child{border-bottom:none;border-radius:0 0 12px 12px}
+.checklist li:hover{background:#fafaf8}
+.checklist li.checked{color:#aaa;text-decoration:line-through}
+.checklist li.checked .chk{background:#185fa5;border-color:#185fa5}
+.checklist li.checked .chk::after{content:'';display:block;width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translate(1px,-1px)}
+.chk{width:20px;height:20px;border:1.5px solid #ccc;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.checklist-wrap{background:#fff;border:1px solid #e8e5e0;border-radius:12px;overflow:hidden}
+.progress-bar-wrap{height:5px;background:#e8e5e0;border-radius:3px;margin-bottom:1.25rem;overflow:hidden}
+.progress-bar{height:100%;background:#185fa5;border-radius:3px;transition:width 0.3s}
+.progress-label{font-size:12px;color:#999;margin-bottom:0.5rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+a{color:#1d4ed8}
+a:hover{text-decoration:underline}
+.reset-btn{background:none;border:none;cursor:pointer;font-size:13px;color:#aaa;padding:4px 0;font-family:inherit}
+.reset-btn:hover{color:#666}
+@media(max-width:500px){.two-col{grid-template-columns:1fr}.hero h1{font-size:22px}.hero-meta{flex-direction:column;gap:0.5rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <div class="hero-eyebrow">Mt Hawthorn Area Band &amp; Orchestra</div>
+  <h1>Music Camp 2026 🎵</h1>
+  <div class="hero-sub">Mt Hawthorn · Jolimont · Maylands Peninsula · Kyilla · North Perth Primary Schools</div>
+  <div class="hero-meta">
+    <div class="hero-pill">📅 Sun 19 – Mon 20 July 2026</div>
+    <div class="hero-pill">📍 Ern Halliday Camp, Hillarys</div>
+    <div class="hero-pill">🕗 Sign-in from 8am</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('arrival')">🚗 Arrival</div>
+  <div class="tab" onclick="switchTab('medical')">🩺 Medical</div>
+  <div class="tab" onclick="switchTab('activities')">🏃 Activities</div>
+  <div class="tab" onclick="switchTab('packing')">🎒 Packing</div>
+  <div class="tab" onclick="switchTab('rules')">📋 Rules</div>
+  <div class="tab" onclick="switchTab('volunteers')">🤝 Volunteers</div>
+</div>
+
+<!-- ARRIVAL -->
+<div id="panel-arrival" class="panel active">
+  <div class="section-label">Getting there</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">📍</span> Ern Halliday Recreation Camp</div>
+    <p>Whitfords Avenue, Hillarys WA 6025</p>
+  <p style="margin-top:8px">Cable gate code was sent via email</p>
+    <a class="map-link" href="https://www.dsr.wa.gov.au/camps" target="_blank">🔗 Camp info &amp; map — dsr.wa.gov.au/camps</a>
+  </div>
+  <div class="alert alert-info" style="margin-top:0.75rem">
+    <span class="alert-icon">ℹ️</span>
+    <div>
+      <div class="alert-title">Gate notes</div>
+      <p>The cable gate allows one vehicle through at a time — the next car must re-enter the code. You won't need the code to exit; drive slowly toward the gate and it lowers automatically.</p>
+      <p style="margin-top:6px">Parking is available along the street from Cardinal Meeting Hall to the Bus Turn, as long as traffic isn't blocked. Any problems — call a Committee Member (numbers available on the day).</p>
+    </div>
+  </div>
+
+  <div class="section-label">Sign-in process</div>
+  <div class="card" style="padding:0.75rem 1.25rem">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Arrive from 8am — not before</div>
+        <div class="step-desc">Head straight to the Kitchen/Dining Hall with your child and all their belongings. If you're signing in another family's child, you must sign them in too.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Check in at the door</div>
+        <div class="step-desc">An usher will direct you to the right table. Your child will receive their lanyard and a copy of the day's schedule. Children with medical or dietary needs will be directed to the first aid station.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Set up dorm &amp; instrument</div>
+        <div class="step-desc">Help your child find their dorm (allocation announced at sign-in), get their bed set up, and get their instrument sorted in the rehearsal hall.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Drop off at Dining Hall — you're done!</div>
+        <div class="step-desc">Return your child to the Dining Hall. All Band and Orchestra members gather there for a quick headcount and run-through of free-time activities before exploring the campsite.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Sign-out</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">🚪</span> Collecting your child</div>
+    <p>Use the same sign-in tables to sign out. If collecting someone else's child, send written notice to <a href="mailto:musiccamp.mhps@gmail.com">musiccamp.mhps@gmail.com</a> with your name and the names of all children in your care — have the email ready on your phone for volunteers to verify.</p>
+    <p style="margin-top:8px">If your child is not staying overnight and has medication, you can either sign it out and back in the next day, or leave it on site — let the volunteer know when you collect your child.</p>
+    <p style="margin-top:8px">Instruments and music stands can be left locked in the rehearsal halls overnight. The Committee and Ern Halliday are not liable for damage or loss. <strong>Label everything</strong> and check the lost property box on the last day.</p>
+  </div>
+
+  <div class="section-label">Emergency muster point</div>
+  <div class="alert alert-warning">
+    <span class="alert-icon">⚠️</span>
+    <div>
+      <div class="alert-title">Muster point: Main Oval</div>
+      <p>If an emergency occurs, everyone assembles at the Main Oval. A roll call will be conducted and parents contacted after relevant authorities (e.g. fire station) have been notified. All volunteers and committee members hold an Ern Halliday Emergency Response Plan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MEDICAL -->
+<div id="panel-medical" class="panel">
+  <div class="alert alert-danger">
+    <span class="alert-icon">🥜</span>
+    <div>
+      <div class="alert-title">Nut-free camp</div>
+      <p>No nut products at any time. If you're concerned about your child's food allergies, you're welcome to bring clearly labelled food in a container.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" style="margin-top:0.75rem">
+    <span class="alert-icon">🤒</span>
+    <div>
+      <div class="alert-title">Keep sick children home</div>
+      <p>If your child is unwell, please keep them home and notify us by emailing <a href="mailto:musiccamp.mhps@gmail.com" style="color:#b45309">musiccamp.mhps@gmail.com</a>.</p>
+    </div>
+  </div>
+
+  <div class="section-label">How medication is managed</div>
+  <div class="card" style="padding:0.75rem 1.25rem">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Sign in medication on arrival</div>
+        <div class="step-desc">Each child's medication is stored in a labelled ziplock bag with their registration details. Parents must sign it in and out, confirming dosage and timing. Emergency contact info is included. All medications are kept centrally and brought out at mealtimes.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Colour-coded lanyards</div>
+        <div class="step-desc">Students with dietary or medical needs receive coloured stickers on their lanyards so volunteers can quickly identify them throughout the day.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Overnight dorm coverage</div>
+        <div class="step-desc">Overnight supervisors carry each child's medical information and medication during the dorm period. A dedicated First Aid volunteer is on site throughout the entire camp.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger" style="margin-top:0.75rem">
+    <span class="alert-icon">🚨</span>
+    <div>
+      <div class="alert-title">Anaphylaxis — please read</div>
+      <p>If your child is anaphylactic, reinforce at the medical table during sign-in that their epi-pen will be kept near them at all times. Please ensure action plans are current and all medications have not expired before camp.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-top:0.75rem">
+    <span class="alert-icon">✅</span>
+    <div>
+      <div class="alert-title">Before camp — medication checklist</div>
+      <p>Check that asthma and anaphylactic action plans are current and brought along. Check expiry dates on all medications. Ensure your child knows the medication process before arriving.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Food</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">🍽️</span> Meals by Accolade Catering</div>
+    <p>All dietary requirements from registration have been passed to our caterer. Meals covered: lunch, dinner, and breakfast. Morning and afternoon tea (brownies, cake, fruit) will include gluten-free and other alternatives as registered.</p>
+  </div>
+
+  <div class="section-label">Dormitories</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">🛏️</span> Dorm allocation</div>
+    <p>Students are placed in dorms with separate bathroom and toilet facilities. Girls and boys are housed separately, each with parent supervision. Dorm allocation is announced at sign-in.</p>
+  </div>
+</div>
+
+<!-- ACTIVITIES -->
+<div id="panel-activities" class="panel">
+  <div class="alert alert-info">
+    <span class="alert-icon">👟</span>
+    <div>
+      <div class="alert-title">Enclosed shoes required for all activities</div>
+      <p>Sandals and thongs are not permitted for land-based programs. Crop tops and midriff-baring tops are not suitable for roping activities. Shorts should be mid-thigh or longer for roping programs. Remove necklaces, chains, or scarfs before any roping activity.</p>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:1.25rem">Monday activities — allocated by registration preference</div>
+  <div class="activity-grid">
+    <div class="activity-card">
+      <div class="tag">🎯 Aim</div>
+      <h4>Archery</h4>
+      <p>Re-curve fibreglass bows on Olympic-style bullseye target boards. Master your technique with guided coaching.</p>
+      <div class="activity-note">All equipment provided</div>
+    </div>
+    <div class="activity-card">
+      <div class="tag">🌀 Heights</div>
+      <h4>Big Swing</h4>
+      <p>Teammates haul one person up to 8m in the air — pull a pin and swing like a pendulum. Qualified staff help you through any nerves.</p>
+      <div class="activity-note">All equipment provided</div>
+    </div>
+    <div class="activity-card">
+      <div class="tag">🚲 Riding</div>
+      <h4>Bike Pump Track</h4>
+      <p>200+ metres of clay track with rollers and berms. Learn to ride without pedalling using weight shifts and gravity. Must be able to ride a bike.</p>
+      <div class="activity-note">Bikes &amp; helmets provided — do not bring your own</div>
+    </div>
+    <div class="activity-card">
+      <div class="tag">🦅 Heights</div>
+      <h4>Flying Fox</h4>
+      <p>Launch from 5m up and zoom 80m along two flying foxes. Try backwards, X-man, or cannonball with qualified staff on hand.</p>
+      <div class="activity-note">All equipment provided</div>
+    </div>
+    <div class="activity-card">
+      <div class="tag">📻 Team</div>
+      <h4>Lost Pilot</h4>
+      <p>Use CB radios and navigation skills to find helicopter crash remnants without being "captured". Track down the lost pilot as a team.</p>
+      <div class="activity-note">All equipment provided</div>
+    </div>
+    <div class="activity-card">
+      <div class="tag">🧭 Navigation</div>
+      <h4>Orienteering</h4>
+      <p>Navigate 28 hectares of coastal bushland to find 22 markers. How many can you find in time?</p>
+      <div class="activity-note">All equipment provided</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-top:1rem">
+    <span class="alert-icon">ℹ️</span>
+    <div>
+      <div class="alert-title">About activity staff</div>
+      <p>All Ern Halliday instructors hold a Working with Children Check, National Police Clearance, and Senior First Aid as a minimum. Activity timing may shift slightly on the day to best suit students' needs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PACKING -->
+<div id="panel-packing" class="panel">
+  <div class="progress-label" id="pack-progress-label">0 of 19 items packed</div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="pack-bar" style="width:0%"></div></div>
+
+  <div class="alert alert-warning" style="margin-bottom:1rem">
+    <span class="alert-icon">🏷️</span>
+    <div>
+      <div class="alert-title">Label absolutely everything</div>
+      <p>Check the lost property box on the last day of camp before you leave.</p>
+    </div>
+  </div>
+
+  <div class="checklist-wrap">
+    <ul class="checklist" id="pack-list">
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Instrument + band/orchestra music + pencil</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Own music stand (labelled)</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Wet weather gear</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Underwear + socks</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Change of clothes (t-shirt, shorts or jeans)</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Warm jacket for the evening</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Runners / enclosed shoes &nbsp;<span style="font-size:12px;color:#aaa">required for activities</span></li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Pyjamas</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Sleeping bag/doona + fitted single sheet + pillowcase &nbsp;<span style="font-size:12px;color:#aaa">pillows provided but you can bring your own</span></li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Hat + sunscreen</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Bath towel</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Toiletries (toothbrush, toothpaste, soap, brush/comb, deodorant)</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Medications — clearly labelled, check expiry dates</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Torch</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Drink bottle (labelled)</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Book or magazine</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Favourite cuddly toy</li>
+      <li onclick="toggleCheck(this)"><div class="chk"></div> Plastic bag for dirty clothes</li>
+      <li onclick="toggleCheck(this)" style="color:#dc2626"><div class="chk"></div> <span style="font-weight:600">Leave at home:</span>&nbsp; mobile phone, iPad, iPod, smartwatch, camera</li>
+    </ul>
+  </div>
+  <div style="text-align:right;margin-top:0.75rem">
+    <button class="reset-btn" onclick="resetChecklist()">Reset checklist</button>
+  </div>
+</div>
+
+<!-- RULES -->
+<div id="panel-rules" class="panel">
+  <div class="section-label">Camp rules</div>
+  <ul class="rule-list">
+    <li><span class="rule-icon">🍽️</span> No eating in dormitories</li>
+    <li><span class="rule-icon">🚪</span> No entering other students' dorms</li>
+    <li><span class="rule-icon">🌞</span> No entering dorms during the day without permission from the Camp Coordinator</li>
+    <li><span class="rule-icon">📵</span> Leave mobile phones and all devices at home — students can use the Camp Coordinator's or overnight volunteer's phone to contact parents if needed</li>
+    <li><span class="rule-icon">🏕️</span> Do not leave the campus at any time</li>
+    <li><span class="rule-icon">😊</span> Don't do anything that spoils the enjoyment or safety of other students</li>
+  </ul>
+
+  <div class="alert alert-danger" style="margin-top:1.25rem">
+    <span class="alert-icon">⛔</span>
+    <div>
+      <div class="alert-title">Rule-breaking means going home</div>
+      <p>Any student who doesn't follow the camp rules will have their family contacted and be sent home. Please speak with your child about respectful, kind behaviour before camp.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Contact</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">✉️</span> Music Camp email</div>
+    <p><a href="mailto:musiccamp.mhps@gmail.com">musiccamp.mhps@gmail.com</a></p>
+    <p style="margin-top:6px;font-size:13px;color:#888">For absences, sign-out authorisations, WWC submissions, or general questions. Committee member phone numbers will also be provided closer to camp.</p>
+  </div>
+
+  <div class="section-label">Schedule</div>
+  <div class="card">
+    <div class="card-title"><span class="card-icon">📅</span> Full program coming soon</div>
+    <p>A detailed schedule with timings and locations will be forwarded before camp. Each child will also have a copy on their lanyard — go over it with them beforehand so they feel prepared.</p>
+  </div>
+</div>
+
+<!-- VOLUNTEERS -->
+<div id="panel-volunteers" class="panel">
+  <div class="alert alert-success">
+    <span class="alert-icon">💚</span>
+    <div>
+      <div class="alert-title">Camp can't run without you</div>
+      <p>Thank you to every parent volunteer from all participating schools. Your time and commitment make this camp possible for our students.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Volunteer roles available</div>
+  <div class="two-col">
+    <div class="card"><div class="card-title"><span class="card-icon">🌙</span> Overnight</div><p style="font-size:13px;color:#555">By year and school group, separated by gender</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">✅</span> Sign in / out</div><p style="font-size:13px;color:#555">Managing student arrivals and departures</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">⭐</span> Evening activities</div><p style="font-size:13px;color:#555">Supporting the evening program</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">☀️</span> Day activities</div><p style="font-size:13px;color:#555">Assisting with daytime activities</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">🩺</span> First Aid</div><p style="font-size:13px;color:#555">On-site first aid coverage throughout camp</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">📸</span> Photography</div><p style="font-size:13px;color:#555">Capturing memories for students and families</p></div>
+    <div class="card"><div class="card-title"><span class="card-icon">🍽️</span> Meal times</div><p style="font-size:13px;color:#555">Food service and student supervision</p></div>
+  </div>
+
+  <div class="section-label">On the day</div>
+  <div class="card" style="padding:0.75rem 1.25rem">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Arrive on time and sign in at the Dining Hall</div>
+        <div class="step-desc">Same sign-in process as students — this keeps track of all adults on site at all times. You'll receive a lanyard to wear during your shift.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Attend the volunteer briefing</div>
+        <div class="step-desc">Requirements for your specific role will be outlined and all questions answered. You'll also sign a Department of Education Confidentiality Form as part of sign-in.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Return your lanyard when you sign out</div>
+        <div class="step-desc">Please return your lanyard at the end of your shift when signing out.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Overnight volunteers — WWC required</div>
+  <div class="alert alert-warning">
+    <span class="alert-icon">🪪</span>
+    <div>
+      <div class="alert-title">Submit your WWC by Friday 10 July</div>
+      <p>Email a copy of your Working with Children Check card or receipt to <a href="mailto:musiccamp.mhps@gmail.com" style="color:#b45309">musiccamp.mhps@gmail.com</a> before the deadline. A receipt is sufficient — the volunteer option is all that is required. WWC volunteer applications are available from your school office.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('panel-'+id).classList.add('active');
+  var tabs={arrival:0,medical:1,activities:2,packing:3,rules:4,volunteers:5};
+  document.querySelectorAll('.tab')[tabs[id]].classList.add('active');
+}
+function toggleCheck(li){
+  li.classList.toggle('checked');
+  updateProgress();
+}
+function updateProgress(){
+  var items=document.querySelectorAll('#pack-list li');
+  var checked=document.querySelectorAll('#pack-list li.checked').length;
+  var total=items.length;
+  document.getElementById('pack-bar').style.width=(checked/total*100)+'%';
+  document.getElementById('pack-progress-label').textContent=checked+' of '+total+' items packed';
+}
+function resetChecklist(){
+  document.querySelectorAll('#pack-list li').forEach(function(li){li.classList.remove('checked')});
+  updateProgress();
+}
+</script>
+</body>
+</html>
