@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a1a;background:#f5f5f3;line-height:1.6;min-height:100vh;padding:1.5rem 1rem 3rem}
-.container{max-width:720px;margin:0 auto}
+.container{max-width:1024px;margin:0 auto}
 .hero{background:linear-gradient(135deg,#1a3a5c 0%,#0f6e56 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:16px;margin-bottom:2rem;position:relative;overflow:hidden}
 .hero::before{content:'♪';position:absolute;right:2rem;top:1rem;font-size:6rem;opacity:0.08;line-height:1;pointer-events:none}
 .hero-eyebrow{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin-bottom:0.5rem}
@@ -15,8 +15,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 .hero-sub{font-size:14px;opacity:0.8;margin-bottom:1.25rem}
 .hero-meta{display:flex;gap:0.75rem;flex-wrap:wrap}
 .hero-pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:100px;padding:5px 14px;font-size:13px}
-.tabs{display:flex;gap:0;border-bottom:1px solid #e0ddd8;margin-bottom:1.75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:12px 12px 0 0;padding:0 0.5rem}
+.tabs{display:flex;gap:0;border-bottom:1px solid #e0ddd8;margin-bottom:1.75rem;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;background:#fff;border-radius:12px 12px 0 0;padding:0 0.5rem;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
 .tab{padding:12px 11px;font-size:13px;color:#666;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color 0.15s;margin-bottom:-1px}
+.tab-select{display:none;width:100%;padding:10px 12px;font-size:14px;border:1px solid #e0ddd8;border-radius:8px;background:#fff;color:#666;cursor:pointer;margin-bottom:1.75rem}
 .tab.active{color:#185fa5;border-bottom-color:#185fa5;font-weight:500}
 .tab:hover:not(.active){color:#1a1a1a}
 .panel{display:none;animation:fadeIn 0.15s ease}
@@ -96,7 +98,7 @@ a:hover{text-decoration:underline}
 .schedule-table tr.daycamp-row{background:#f0fdf4}
 .schedule-table tr.daycamp-row td:first-child{color:#15803d}
 .tentative-badge{display:inline-block;background:#fffbeb;border:1px solid #fcd34d;color:#b45309;font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle}
-@media(max-width:500px){.two-col{grid-template-columns:1fr}.hero h1{font-size:22px}.hero-meta{flex-direction:column;gap:0.5rem}}
+@media(max-width:500px){.tabs{display:none}.tab-select{display:block}.two-col{grid-template-columns:1fr}.hero h1{font-size:22px}.hero-meta{flex-direction:column;gap:0.5rem}}
 </style>
 </head>
 <body>
@@ -124,6 +126,18 @@ a:hover{text-decoration:underline}
   <div class="tab" onclick="switchTab('rules')">📋 Rules</div>
   <div class="tab" onclick="switchTab('volunteers')">🤝 Volunteers</div>
 </div>
+
+<select class="tab-select" id="tab-mobile" onchange="switchTab(this.value)">
+  <option value="arrival">🚗 Arrival</option>
+  <option value="signout">🚪 Sign Out</option>
+  <option value="daycamp">☀️ Day Campers</option>
+  <option value="medical">🩺 Medical</option>
+  <option value="activities">🏃 Activities</option>
+  <option value="schedule">📅 Schedule</option>
+  <option value="packing">🎒 Packing</option>
+  <option value="rules">📋 Rules</option>
+  <option value="volunteers">🤝 Volunteers</option>
+</select>
 
 <!-- ARRIVAL -->
 <div id="panel-arrival" class="panel active">
@@ -615,6 +629,7 @@ function switchTab(id){
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
   document.getElementById('panel-'+id).classList.add('active');
   document.querySelectorAll('.tab')[tabOrder.indexOf(id)].classList.add('active');
+  document.getElementById('tab-mobile').value=id;
 }
 function toggleCheck(li){li.classList.toggle('checked');updateProgress();}
 function updateProgress(){
